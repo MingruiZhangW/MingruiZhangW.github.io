@@ -1,0 +1,111 @@
+
+body{
+
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+
+}
+canvas {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+.box{
+
+    width: 450px;
+    background: rgba(205, 198, 230, 0.377);
+    padding: 40px;
+    border-radius: 30%;
+    margin: auto;
+    margin-top: 4%;
+    color: aliceblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.box-img{
+
+    border-radius: 50%;
+    width: 150px;
+    height: 190px;
+
+}
+.box-h1{
+
+    font-size: 50px;
+    letter-spacing: 4px;
+    font-weight: 100;
+
+}
+.box-h5{
+
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-weight: 100;
+
+}
+ul{
+
+    margin: 0;
+    padding: 0;
+
+}
+.box li{
+
+    display: inline-block;
+    margin:  6px;
+    list-style: none;
+
+}
+.box li a .fa.fa-linkedin{
+
+    color: rgb(242, 245, 247);
+    text-decoration: none;
+    font-size: 50px;
+    -webkit-transition: 1s ease-out;
+    -moz-transition:  1s ease-out;
+    transition:  1s ease-out;
+    
+}
+.box li a .fa.fa-linkedin:hover{
+
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+
+}
+.box li a .fa.fa-file-text{
+
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 50px;
+    -webkit-transition: 1s ease-out;
+    -moz-transition:  1s ease-out;
+    transition:  1s ease-out;
+    
+}
+.box li a .fa.fa-file-text:hover{
+
+    font-size: 60px;
+
+}
+.box li a .fa.fa-envelope{
+
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 50px;
+    -webkit-transition: 1s ease-out;
+    -moz-transition:  1s ease-out;
+    transition:  1s ease-out;
+    
+}
+.box li a .fa.fa-envelope:hover{
+
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+
+}
