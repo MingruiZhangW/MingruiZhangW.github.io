@@ -5,6 +5,7 @@
     <title>Ming's WebSite</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
     <script src="http://use.fontawesome.com/d1341f9b7a.js"></script>
     <script type="text/javascript">
 
@@ -85,11 +86,15 @@
         }
         
     </script>
+    <script src="wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     
 </head>
 <body onload="setup();">
         <canvas id="Canvas2D" width="1000" height="1000">Internet Explorer Not Supported :(</canvas>
-    <div class="box">
+    <div class="box wow bounceIn animated" data-wow-delay="1s">
         <img src="progile.jpg" alt="Smiley face" class="box-img">
         <h1> Mingrui Zhang</h1>
         <h5> McGill University</h5>
