@@ -3,7 +3,6 @@ body{
 
     margin: 0%;
     padding: 0%;
-    text-align: center;
 
 }
 canvas {
@@ -14,16 +13,22 @@ canvas {
     height:100%;
     z-index:-1;
 }
+.table_rows{
+
+    display: table;
+    width: 100%;
+
+}
 .box{
 
     width: 450px;
-    background: rgba(205, 198, 230, 0.377);
-    padding: 40px;
+    padding: 75px;
     border-radius: 30%;
     margin: auto;
-    margin-top: 4%;
-    color: aliceblue;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 10%;
+    font-family: 'Do Hyeon', sans-serif;
+    display: table-cell;
+    text-align: center;
 
 }
 .box-img{
@@ -33,18 +38,20 @@ canvas {
     height: 190px;
 
 }
-.box-h1{
+.box h1{
 
-    font-size: 50px;
+    font-size: 40px;
     letter-spacing: 4px;
-    font-weight: 100;
+    font-weight: 300;
+    color: aliceblue;
 
 }
-.box-h5{
+.box h5{
 
-    font-size: 25px;
+    font-size: 15px;
     letter-spacing: 3px;
-    font-weight: 100;
+    font-weight: 300;
+    color: rgb(238, 238, 238);
 
 }
 ul{
@@ -107,5 +114,45 @@ ul{
     -webkit-transform: rotateZ(360deg);
     -moz-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
+
+}
+.Experience_projects_col{
+
+    width: 450px;
+    background: rgba(205, 198, 230, 0.377);
+    padding: 75px;
+    border-radius: 30%;
+    margin: auto;
+    margin-top: 10%;
+    font-family: 'Do Hyeon', sans-serif;
+    display: table-cell;
+
+}
+.Experience_projects_col h5{
+
+    position: relative;
+    bottom: 130px;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: aliceblue;
+
+}
+.Intership_expreience p a{
+
+    position: relative;
+    bottom: 130px;
+    font-size: 25px;
+    font-weight: 10;
+    color: rgba(240, 248, 255, 0.493);
+
+}
+.Academic_projects p a{
+
+    position: relative;
+    bottom: 90px;
+    font-size: 25px;
+    font-weight: 10;
+    color: rgba(240, 248, 255, 0.493);
 
 }
