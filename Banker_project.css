@@ -31,10 +31,11 @@ canvas {
     font-weight: 300;
     color: aliceblue;
 
+
 }
 .box h2{
 
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: 2px;
     font-weight: 300;
     color: aliceblue;
@@ -51,7 +52,7 @@ canvas {
 }
 .box-img{
 
-    width: 25%;
-    height: 350px;
+    width: 45%;
+    height: 220px;
 
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>IoT–Sensor Data Management from Hardware to Cloud</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Microprocessor_project.css">
+    <link rel="stylesheet" href="animate.css">
+    <link href="https://fonts.font.im/css?family=Do+Hyeon" rel="stylesheet">
+    <script src="http://use.fontawesome.com/d1341f9b7a.js"></script>
+    <script src="wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+<body style="margin: 0px;" onload="executeFrame();">
+    
+    <canvas id="canvas" width="749" height="671">
+        <script src="requestAnimFrame.js"></script>
+        <script src="script.js"></script>
+      
+    </canvas>
+    <div class="box wow fadeInUp animated" data-wow-delay="0.5s">
+
+        <h1> ■ IoT–Sensor Data Management from Hardware to Cloud </h1>
+        <img src="Micp.JPG" alt="Smiley face" class="box-img">
+        <h2> The system aims to send recorded audio data from the programming board
+            over the BLE (Bluetooth Low Energy) connection to the smartphone device.
+            This data will be saved as a file in the smartphone and uploaded to cloud device.</h2>
+        <h3>Project Details and Design that I was in charge with </h3>
+        <h4> 1. STM Discovery board</h4>
+        <h4>• Read the audio data (reading on ship microphone),</h4>
+        <h4>• Apply processing if needed,</h4>
+        <h4>• Transmit data serially to the Nucleo board.</h4>
+        <h4>2. STM Nucleo board with BLE board</h4>
+        <h4>• Interconnects Discovery board with smartphone. 
+        <h4>• Provides BLE functionality to the Discovery board.</h4>
+        <p><a href="Microp_Final_Report_G04.pdf" target="_blank" style="text-decoration: none"> If you are interested, download the report here.</a></p>
+        <p><a href="https://drive.google.com/open?id=1bthxfyUmAqJD0fNzILPDm9ozYgTG5dnt" target="_blank" style="text-decoration: none"> And the code :)</a></p>
+
+    </div>
+
+</body>
+</html> 

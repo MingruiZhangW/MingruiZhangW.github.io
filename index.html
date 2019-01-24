@@ -8,93 +8,17 @@
     <link rel="stylesheet" href="animate.css">
     <link href="https://fonts.font.im/css?family=Do+Hyeon" rel="stylesheet">
     <script src="http://use.fontawesome.com/d1341f9b7a.js"></script>
-    <script type="text/javascript">
-
-        function setup()
-        {
-        
-        
-        var fov = 700;
-        
-        var SCREEN_WIDTH = 1000; 
-        var SCREEN_HEIGHT = 1000; 
-        
-        var HALF_WIDTH = SCREEN_WIDTH/2; 
-        var HALF_HEIGHT = SCREEN_HEIGHT/2; 
-        
-        var numPoints = 500; 
-        
-        
-        function draw3Din2D(point3d)
-        {  
-            x3d = point3d[0];
-            y3d = point3d[1]; 
-            z3d = point3d[2]; 
-            var scale = fov/(fov+z3d); 
-            var x2d = (x3d * scale) + HALF_WIDTH;	
-            var y2d = (y3d * scale)  + HALF_HEIGHT;
-            
-            
-            c.lineWidth= scale; 
-            c.strokeStyle = "rgb(255,255,255)"; 	
-            c.beginPath();
-            c.moveTo(x2d,y2d); 
-            c.lineTo(x2d+scale,y2d); 
-            c.stroke(); 
-            
-        }
-        
-        var canvas = document.getElementById('Canvas2D');
-        var c = canvas.getContext('2d');
-        
-        var points = [];
-        
-        function initPoints()
-        {
-            for (i=0; i<numPoints; i++)
-            {
-                point = [(Math.random()*400)-200, (Math.random()*400)-200 , (Math.random()*400)-200 ];
-                points.push(point); 
-            }
-        
-        }
-        
-        function render() 
-        {
-        
-            c.fillStyle="rgb(0,0,0)";
-              c.fillRect(0,0, SCREEN_WIDTH, SCREEN_HEIGHT);
-              
-            for (i=0; i<numPoints; i++)
-            {
-                point3d = points[i]; 
-                
-                z3d = point3d[2]; 
-                z3d-=4; 
-                if(z3d<-fov) z3d +=400; 
-                point3d[2] = z3d; 
-                
-                
-                draw3Din2D(point3d); 
-        
-            }
-        }
-        
-        initPoints();
-        
-        var loop = setInterval(function(){render();}, 50);
-        
-        }
-        
-    </script>
     <script src="wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
     
 </head>
-<body onload="setup();">
-    <canvas id="Canvas2D" width="1000" height="1000">Internet Explorer Not Supported :(</canvas>
+<body style="margin: 0px;" onload="executeFrame();">
+    <canvas id="canvas" width="749" height="671">
+        <script src="requestAnimFrame.js"></script>
+        <script src="script.js"></script>
+    </canvas>
     <div class="table_rows">
 
         <div class="box wow bounceIn animated" data-wow-delay="1s">
@@ -118,11 +42,25 @@
 
             </div>
 
-            <div class="Academic_projects">
+            <div class="Microprocessor_project">
 
-                <p><a href="Academic_projects.html" target="_blank" style="text-decoration: none"> ■ To be continued Projects</a></p>
+                <p><a href="Microprocessor_project.html" target="_blank" style="text-decoration: none"> ■  IoT–Sensor Data Management from Hardware to Cloud</a></p>
 
             </div>
+
+            <div class="Banker_project">
+
+                <p><a href="Banker_project.html" target="_blank" style="text-decoration: none"> ■  Operating System | Banker’s Algorithm </a></p>
+
+            </div>
+
+            <div class="Automated_Robot_Competition">
+
+                    <p><a href="Automated_Robot_Competition.html" target="_blank" style="text-decoration: none"> ■  Automated Robot Competition </a></p>
+    
+            </div>
+            <h5>About me</h5>
+            <p><a href="TEFAQ.pdf" target="_blank" style="text-decoration: none"> ■  ÉVALUATION DE FRANÇAIS </a></p>
 
         </div>
 

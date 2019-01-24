@@ -34,11 +34,35 @@ canvas {
 }
 .box h2{
 
-    font-size: 15px;
-    letter-spacing: 2px;
+    font-size: 23px;
+    letter-spacing: 4px;
     font-weight: 300;
     color: aliceblue;
     text-align: left;
+
+}
+.box h3{
+
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: rgb(245, 222, 14);
+    text-align: left;
+
+}
+.box h4{
+
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color:aliceblue;
+    text-align: left;
+
+}
+.box-img{
+
+    width: 58%;
+    height: 320px;
 
 }
 .box p a{
@@ -47,11 +71,5 @@ canvas {
     letter-spacing: 2px;
     font-weight: 300;
     color: rgb(223, 209, 12);
-
-}
-.box-img{
-
-    width: 25%;
-    height: 350px;
 
 }

@@ -6,7 +6,7 @@ body{
 
 }
 canvas {
-    position:absolute;
+    position: fixed;
     top:0;
     left:0;
     width:100%;
@@ -22,7 +22,8 @@ canvas {
 .box{
 
     width: 450px;
-    padding: 75px;
+    padding: 45px;
+    padding-bottom: 0%;
     border-radius: 30%;
     margin: auto;
     margin-top: 10%;
@@ -120,8 +121,9 @@ ul{
 
     width: 450px;
     background: rgba(205, 198, 230, 0.377);
-    padding: 75px;
-    border-radius: 30%;
+    padding: 50px;
+    padding-bottom: 0%;
+    border-radius: 15%;
     margin: auto;
     margin-top: 10%;
     font-family: 'Do Hyeon', sans-serif;
@@ -136,6 +138,8 @@ ul{
     letter-spacing: 3px;
     font-weight: 300;
     color: aliceblue;
+    padding: 0;
+    margin: 0%;
 
 }
 .Intership_expreience p a{
@@ -147,10 +151,28 @@ ul{
     color: rgba(240, 248, 255, 0.493);
 
 }
-.Academic_projects p a{
+.Microprocessor_project p a{
 
     position: relative;
-    bottom: 90px;
+    bottom: 130px;
+    font-size: 25px;
+    font-weight: 10;
+    color: rgba(240, 248, 255, 0.493);
+
+}
+.Banker_project p a{
+
+    position: relative;
+    bottom: 130px;
+    font-size: 25px;
+    font-weight: 10;
+    color: rgba(240, 248, 255, 0.493);
+
+}
+.Experience_projects_col p a{
+
+    position: relative;
+    bottom: 130px;
     font-size: 25px;
     font-weight: 10;
     color: rgba(240, 248, 255, 0.493);
