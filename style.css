@@ -17,7 +17,7 @@ canvas {
 
     display: table;
     width: 100%;
-    margin-top: 4%;
+    margin-top: 10%;
 
 }
 .box{
@@ -119,10 +119,9 @@ ul{
 .Experience_projects_col{
 
     width: 450px;
-    background: rgba(205, 198, 230, 0.377);
-    padding: 50px;
+    padding: 55px;
     padding-bottom: 0%;
-    border-radius: 15%;
+    border-radius: 10%;
     font-family: 'Do Hyeon', sans-serif;
     display: table-cell;
 
@@ -173,5 +172,12 @@ ul{
     font-size: 25px;
     font-weight: 10;
     color: rgba(240, 248, 255, 0.493);
+
+}
+.Experience_projects_col audio{
+
+    position: relative;
+    bottom: 90px;
+    padding:0;
 
 }

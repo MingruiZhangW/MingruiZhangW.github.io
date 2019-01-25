@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Design Project</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="DP_project.css">
+    <link rel="stylesheet" href="animate.css">
+    <link href="https://fonts.font.im/css?family=Do+Hyeon" rel="stylesheet">
+    <script src="http://use.fontawesome.com/d1341f9b7a.js"></script>
+    <script src="wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+<body style="margin: 0px;" onload="executeFrame();">
+    
+    <canvas id="canvas" width="749" height="671">
+        <script src="requestAnimFrame.js"></script>
+        <script src="script.js"></script>
+      
+    </canvas>
+    <div class="box wow fadeInUp animated" data-wow-delay="0.5s">
+
+        <h1> ■ MATLAB Based Circuit Simulator </h1>
+        <img src="img/circuit_sim.PNG" alt="Smiley face" class="box-img">
+        <h2>Motivated by the growing educational needs of an intuitive circuit simulation tool capable of
+            performing analysis on analog circuits, a MATLAB-based circuit simulation tool is targeted as
+            the goal of this design project. The project is divided into three different parts, enhancement and
+            testing of simulator core code (designed by Prof. Roni Khazaka), design and implementation of the simulator graphical user
+            interface (GUI), and implementation of the interaction between the core code and the GUI</h2>
+        <h2>AC, DC, and sweeping analysis on resistive, RC, RLC, and non-linear analog circuits is
+            developed and packaged using MATLAB code in MATLAB and App Designer environment.</h2>
+        <h3> ■ An Example of Linear RLC AC Analysis </h3>
+        <img src="img/test_cir.PNG" alt="Smiley face" class="cirC-img">
+        <h4>Result from our GUI</h4>
+        <img src="img/mat_cir.PNG" alt="Smiley face" class="cirM-img">
+        <h4>Result from our LTSpice</h4>
+        <img src="img/cir_LT.PNG" alt="Smiley face" class="cirL-img">
+        <h3> ■ Different segment of our GUI </h3>
+        <img src="img/seg1_cir.PNG" alt="Smiley face" class="box-img">
+        <img src="img/seg2_cir.PNG" alt="Smiley face" class="box-img">
+
+    </div>
+
+</body>
+</html>
