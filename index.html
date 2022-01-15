@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.font.im/css?family=Do+Hyeon" rel="stylesheet">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="http://use.fontawesome.com/d1341f9b7a.js"></script>
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
-    
 </head>
 <body style="margin: 0px;" onload="executeFrame();">
     <canvas id="canvas" width="749" height="671">
@@ -20,44 +21,20 @@
         <script src="js/stars.js"></script>
     </canvas>
     <div class="table_rows">
-
-        <div class="box wow bounceIn animated" data-wow-delay="1s">
-            <img src="resources/img/progile.jpg" alt="Smiley face" class="box-img">
-            <h1> Mingrui Zhang</h1>
-            <h5> McGill University</h5>
-            <h5> Bachelor of Electrical Engineering</h5>
-            <h5> Software Developer</h5>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/mingruizhangee/"> <i class="fa fa-linkedin" aria-hidden="true"></i> </a></li>
-                <li><a href="resources/pdf/Resume Mingrui Zhang.pdf"> <i class="fa fa-file-text" aria-hidden="true"></i> </a></li>
-                <li><a href="mailto:mingrui.zhang@mail.mcgill.ca"> <i class="fa fa-envelope" aria-hidden="true"></i> </a></li>
-            </ul>
-        </div>
+        <div id="profile" class="box wow bounceIn animated" data-wow-delay="1s"></div>
         <div class="Experience_projects_col wow fadeIn animated" data-wow-delay="2.2s">
-            
             <h5>Experiences and Projects</h5>
             <div class="Intership_expreience">
-
                 <p><a href="Intership_expreience.html" target="_blank" style="text-decoration: none"> ■ Internship Expreience</a></p>
-
             </div>
-
             <div class="Microprocessor_project">
-
                 <p><a href="Microprocessor_project.html" target="_blank" style="text-decoration: none"> ■  IoT–Sensor Data Management from Hardware to Cloud</a></p>
-
             </div>
-
             <div class="Banker_project">
-
                 <p><a href="Banker_project.html" target="_blank" style="text-decoration: none"> ■  Operating System | Banker’s Algorithm </a></p>
-
             </div>
-
             <div class="DP_project">
-
-                    <p><a href="DP_project.html" target="_blank" style="text-decoration: none"> ■  MATLAB Based Circuit Simulator </a></p>
-    
+                <p><a href="DP_project.html" target="_blank" style="text-decoration: none"> ■  MATLAB Based Circuit Simulator </a></p>
             </div>
             <h5>About me && Interests</h5>
             <p><a href="resources/pdf/TEFAQ.pdf" target="_blank" style="text-decoration: none"> ■  ÉVALUATION DE FRANÇAIS </a></p>
@@ -65,10 +42,8 @@
                 <source src="resources/media/soundofsclience.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
-
         </div>
-
     </div>
-
+    <script src="js/index.js"></script>
 </body>
 </html>
