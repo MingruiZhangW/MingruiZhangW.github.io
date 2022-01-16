@@ -25,6 +25,9 @@ ReactDOM.render(
 
 > Imperative programming is a programming paradigm that uses statements that change a program’s state Imperative Programming is like your friend calling your father that tells her how to fix your car step by step.
 
+# React setup
+https://reactjs.org/docs/add-react-to-a-website.html
+
 # JSX
 
 ```
@@ -76,4 +79,33 @@ console.log(page)
         _owner: null,
         _store: {}}
  */
+```
+
+- What's wrong with this code:
+> We need our JSX to be nested under a single parent element
+
+```
+const page = (
+    <h1>Hello</h1>
+    <p>This is my website!</p>
+)
+```
+
+-  What is a React component?
+> A function that returns React elements. (UI)
+
+```
+// React dependency introduction
+function Profile() {
+    return (
+        <div>
+            <img src="resources/img/progile.jpg"></img>
+        </div>
+    )
+}
+
+ReactDOM.render(
+    <Profile/>,
+    document.getElementById("profile")
+)
 ```
