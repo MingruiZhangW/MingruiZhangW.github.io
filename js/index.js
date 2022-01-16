@@ -3,7 +3,7 @@ function Profile() {
     return React.createElement(
         "div",
         null,
-        React.createElement("img", { src: "resources/img/progile.jpg", alt: "Smiley face", "class": "box-img" }),
+        React.createElement("img", { src: "resources/img/progile.jpg", alt: "Smiley face", className: "box-img" }),
         React.createElement(
             "h1",
             null,
@@ -34,7 +34,7 @@ function Profile() {
                     "a",
                     { href: "https://www.linkedin.com/in/mingruizhangee/" },
                     " ",
-                    React.createElement("i", { "class": "fa fa-linkedin", "aria-hidden": "true" }),
+                    React.createElement("i", { className: "fa fa-linkedin", "aria-hidden": "true" }),
                     " "
                 )
             ),
@@ -45,7 +45,7 @@ function Profile() {
                     "a",
                     { href: "resources/pdf/Resume Mingrui Zhang.pdf" },
                     " ",
-                    React.createElement("i", { "class": "fa fa-file-text", "aria-hidden": "true" }),
+                    React.createElement("i", { className: "fa fa-file-text", "aria-hidden": "true" }),
                     " "
                 )
             ),
@@ -56,7 +56,7 @@ function Profile() {
                     "a",
                     { href: "mailto:mingrui.zhang@mail.mcgill.ca" },
                     " ",
-                    React.createElement("i", { "class": "fa fa-envelope", "aria-hidden": "true" }),
+                    React.createElement("i", { className: "fa fa-envelope", "aria-hidden": "true" }),
                     " "
                 )
             )
