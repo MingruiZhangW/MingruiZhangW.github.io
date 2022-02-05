@@ -328,7 +328,7 @@ export default function App() {
 ```
 
 - ```App component rendered ``` and ```Count component rendered```
-- Anytime **count** changes, ```App()```, ```Count()``` will be called again
+- Anytime **count** changes, ```App()```, ```Count()``` will be called again to **re-render**
 
 ### Passing Data to Components
 ![alt text](./resources/img/react_passing_data_to_components.png)
@@ -360,5 +360,278 @@ export default function App() {
         )
     }
 ```
+
+# Conditional rendering
+
+- &&
+```
+import React from "react"
+
+export default function Joke(props) {
+    const [isShown, setIsShown] = React.useState(false)
+
+    function toggleShown(){
+        setIsShown(prevShown => !prevShown)
+    }
+
+    # isShown -> props.punchline
+    return (
+        <div>
+            {props.setup && <h3>{props.setup}</h3>}
+            {isShown && <p>{props.punchline}</p>}
+            <button onClick={toggleShown}>Show Punchline</button>
+            <hr />
+        </div>
+    )
+}
+```
+
+- ternary
+
+```
+    <button onClick={toggleShown}>{isShown ? "Hide" : "Show"} Punchline</button>
+```
+
+# React Forms
+
+- Watch for inputs
+```
+import React from "react"
+
+export default function Form() {
+    const [firstName, setFirstName] = React.useState("")
+    
+    console.log(firstName)
+    
+    function handleChange(event) {
+        setFirstName(event.target.value)
+    }
+    
+    return (
+        <form>
+            <input
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+            />
+        </form>
+    )
+}
+```
+
+- Take object as state
+
+```
+import React from "react"
+
+export default function Form() {
+    const [formData, setFormData] = React.useState(
+        {firstName: "", lastName: ""}
+    )
+    
+    console.log(formData)
+    
+    function handleChange(event) {
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+    
+    return (
+        <form>
+            <input
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+                name="firstName"
+            />
+            <input
+                type="text"
+                placeholder="Last Name"
+                onChange={handleChange}
+                name="lastName"
+            />
+        </form>
+    )
+}
+```
+
+### Controlled inputs
+![alt text](./resources/img/react_controlled_inputs.png)
+```
+    <input
+        type="email"
+        placeholder="Email"
+        onChange={handleChange}
+        name="email"
+        // value here
+        value={formData.email}
+    />
+```
+
+# React - useEffect
+
+```
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    
+    console.log("Component rendered")
+    
+    fetch("https://swapi.dev/api/people/1")
+        .then(res => res.json())
+        .then(data => setStarWarsData(data))
+
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+```
+> This will cause infinite loop -> setStarWarsData all over because of the re-rendering
+
+- [We need to eliminate the **side effects**](https://reactjs.org/docs/hooks-effect.html)
+
+![alt text](./resources/img/react_primary_tasks.png)
+![alt text](./resources/img/react_cannot_handle.png)
+
+- One thing to keep in mind that ```React.useEffect``` will only be run after the components are rendered.
+
+```
+import React from "react"
+
+export default function App() {
+    console.log("Component rendered")
+    
+    // side effects
+    React.useEffect(function() {
+        console.log("Effect ran")
+    })
+    
+    return (
+        <div></div>
+    )
+}
+```
+
+- Output
+```
+    Component rendered
+    Effect ran
+```
+
+### Dependencies array
+
+```
+    React.useEffect(function() {
+        console.log("Effect ran")
+        // fetch("https://swapi.dev/api/people/1")
+        //     .then(res => res.json())
+        //     .then(data => console.log(data))
+    }, [])
+```
+> The second parameter is the dependencies array which means that
+> **only when the objects passed to the dependencies array are changed**, 
+> the first parameter (func) will be run again. **So it can be seen as a limitation
+> to the times that the func could run instead of running every re-render.**
+
+```
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+
+    React.useEffect(function() {
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    }, [])
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+```
+- This will not cause infinite loop **since we have empty dependencies array**
+
+### Cleanup function
+```
+import React from "react"
+
+export default function WindowTracker() {
+    
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+    
+    React.useEffect(() => {
+        window.addEventListener("resize", function() {
+            setWindowWidth(window.innerWidth)
+        })
+    }, [])
+    
+    return (
+        <h1>Window width: {windowWidth}</h1>
+    )
+}
+```
+
+- This will cause memory leak since the ```addEventListener``` does not get removed.
+
+```
+Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function. at WindowTracker (exe1.bundle.js:61:56)
+```
+
+- **Use return to return a clean-up function and it will be run when the component is destoryed**
+
+```
+    React.useEffect(() => {
+        function watchWidth() {
+            console.log("Setting up...")
+            setWindowWidth(window.innerWidth)
+        }
+        
+        window.addEventListener("resize", watchWidth)
+        
+        return function() {
+            console.log("Cleaning up...")
+            window.removeEventListener("resize", watchWidth)
+        }
+    }, [])
+```
+
+### Async in useEffect
+
+```
+    /**
+        useEffect takes a function as its parameter. If that function
+        returns something, it needs to be a cleanup function. Otherwise,
+        it should return nothing. If we make it an async function, it
+        automatically retuns a promise instead of a function or nothing.
+        Therefore, if you want to use async operations inside of useEffect,
+        you need to define the function separately inside of the callback
+        function, as seen below:
+    */
+    React.useEffect(() => {
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemes(data.data.memes)
+        }
+        getMeme()
+
+        return () => {
+            
+        }
+    }, [])
+```
+
+# React useRef
+[The Complete Guide to useRef() and Refs in React](https://dmitripavlutin.com/react-useref-guide/)
 
 Thanks to https://scrimba.com/learn/learnreact
