@@ -33,7 +33,7 @@ ul{
     width:100%;
     min-height: 100%;
     display: grid;
-    grid: "nav_container" 5%
+    grid: "nav_container" 50px
           "main_container" 1fr / 1fr;
 }
 .main_container {
@@ -129,26 +129,26 @@ ul{
     padding: 0px;
     padding-bottom: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-.work_sfl_container {
+.work_exp_container {
     width: 80%;
-    padding-bottom: 20px;
     border-radius: 30px;
     margin-top: 30px;
     text-align: center;
     background: rgba(213,212,210,0.9);
 }
-.work_sfl_container .jami_logo_svg {
+.work_exp_container .jami_logo_svg {
     width: 50%;
 }
-.work_sfl_container a {
+.work_exp_container a {
     text-decoration: none;
     cursor: pointer;
     opacity: 1;
     transition: 0.3s;
 }
-.sfl_web_a {
+.company_web_a {
     color: rgb(226,135,67);
 }
 .jami_web_a {
@@ -158,25 +158,32 @@ ul{
     color: #000;
     font-size: calc(45px + 0.4vw);
 }
-.work_sfl_container a:hover {
+.work_exp_container a:hover {
     opacity: 0.7
 }
-.work_sfl_container h1{
+.work_exp_container h1 {
     font-size: calc(21px + 0.4vw);
     letter-spacing: 2px;
     font-weight: 300;
     color: black;
     font-family: "Raleway";
 }
-.work_sfl_container .work_title{
+.work_exp_container h2 {
+    font-size: calc(16px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: black;
+    font-family: "Raleway";
+}
+.work_exp_container .work_title{
     text-decoration: underline;
 }
-.work_sfl_desp {
+.work_desp {
     display: inline-block;
     text-align: left;
     width: 85%;
 }
-.work_sfl_desp p{
+.work_desp p {
     font-size: calc(14px + 0.4vw);
     font-weight: 200;
     line-height: 1.4;
@@ -300,7 +307,10 @@ nav {
         display: block;
     }
 
-    .work_sfl_desp {
+    .work_desp {
+        display: none;
+    }
+    .intern_video {
         display: none;
     }
 }

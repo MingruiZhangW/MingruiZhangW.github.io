@@ -1,9 +1,9 @@
 export default function Work(props) {
     return (
         <div className={props.requiredWorkClassName} onAnimationEnd={props.workAnimationEnded}>
-            <div className="work_sfl_container">
+            <div className="work_exp_container">
                 <h1>
-                    <a className="sfl_web_a" 
+                    <a className="company_web_a" 
                        title="Savoir-faire Linux Website"
                        href="https://savoirfairelinux.com/en"
                        target="_blank" rel="noopener noreferrer">
@@ -18,7 +18,7 @@ export default function Work(props) {
                 </h1>
                 <h1 className="work_title">Software Developer</h1>
                 <img className="jami_logo_svg" src="resources/img/jami_logo.svg" alt="Jami logo"></img>
-                <div className="work_sfl_desp">
+                <div className="work_desp">
                     <p>
                         Savoir-faire Linux is specialized in open source software and digital electronics.
                         Jami, as one of its products, is a SIP-compatible distributed peer-to-peer softphone
@@ -36,6 +36,38 @@ export default function Work(props) {
                            <i className="fa fa-gitlab" aria-hidden="true"></i>
                     </a>
                 </h3>
+                <h4 className="work_duration">
+                    MAR. 2019 - DEC. 2021
+                </h4>
+            </div>
+            <div className="work_exp_container">
+                <h1>
+                    <a className="company_web_a" 
+                       title="E-Innovation Inc. LinkedIn Website"
+                       href="https://www.linkedin.com/company/e-innovation/"
+                       target="_blank" rel="noopener noreferrer">
+                           E-Innovation Inc.
+                    </a>, Montreal
+                </h1>
+                <h1 className="work_title">Automation Developer Intern</h1>
+                <div className="work_desp">
+                    <p>
+                        E-Innovation Inc. was a Montreal based company that was founded by five
+                        researches from McGill University. I worked as a automation Developer to
+                        research and develop a way of automating the sealing and taping progress for
+                        making a new type of electrode, together with a mechanical engineering student.
+                    </p>
+                </div>
+                <div className="intern_video">
+                    <h2>Video of the sealing machine</h2>
+                    <video width="50%" height="400" controls>
+                            <source src="resources/media/job.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h4 className="work_duration">
+                    MAR.2017 - AUG. 2017
+                </h4>
             </div>
         </div>
     )
