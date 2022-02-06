@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <title>Ming's WebSite</title>
+    <link rel="shortcut icon" type="image/jpg" href="resources/img/favicon.jpg"/>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,35 +16,12 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 </head>
-<body style="margin: 0px;" onload="executeFrame();">
+<body onload="executeFrame();">
     <canvas id="canvas" width="749" height="671">
         <script src="js/requestAnimFrame.js"></script>
         <script src="js/stars.js"></script>
     </canvas>
-    <div class="table_rows">
-        <div id="profile" class="box animate__animated animate__bounceIn animate__delay-0.5s"></div>
-        <div class="Experience_projects_col animate__animated animate__fadeIn animate__delay-1s">
-            <h5>Experiences and Projects</h5>
-            <div class="Intership_expreience">
-                <p><a href="Intership_expreience.html" target="_blank" style="text-decoration: none"> ■ Internship Expreience</a></p>
-            </div>
-            <div class="Microprocessor_project">
-                <p><a href="Microprocessor_project.html" target="_blank" style="text-decoration: none"> ■  IoT–Sensor Data Management from Hardware to Cloud</a></p>
-            </div>
-            <div class="Banker_project">
-                <p><a href="Banker_project.html" target="_blank" style="text-decoration: none"> ■  Operating System | Banker’s Algorithm </a></p>
-            </div>
-            <div class="DP_project">
-                <p><a href="DP_project.html" target="_blank" style="text-decoration: none"> ■  MATLAB Based Circuit Simulator </a></p>
-            </div>
-            <h5>About me && Interests</h5>
-            <p><a href="resources/pdf/TEFAQ.pdf" target="_blank" style="text-decoration: none"> ■  ÉVALUATION DE FRANÇAIS </a></p>
-            <audio controls>
-                <source src="resources/media/soundofsclience.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-        </div>
-    </div>
-    <script src="js/index.js"></script>
+    <div id="root" class="root_container"></div>
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>

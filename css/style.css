@@ -1,7 +1,13 @@
-body{
+html {
+    margin: 0px;
+    height: 100%;
+}
+body {
     margin: 0%;
     padding: 0%;
     font-family: Inter, sans-serif;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 canvas {
     position: fixed;
@@ -11,168 +17,290 @@ canvas {
     height:100%;
     z-index:-1;
 }
-.table_rows{
-
-    display: table;
-    width: 100%;
-    margin-top: 10%;
-}
-.box{
-
-    width: 450px;
-    padding: 45px;
-    padding-bottom: 0%;
-    border-radius: 30%;
-    display: table-cell;
-    text-align: center;
-
-}
-.box-img{
-
-    border-radius: 50%;
-    width: 150px;
-    height: 190px;
-
-}
-.box h1{
-
-    font-size: 40px;
-    letter-spacing: 4px;
-    font-weight: 300;
-    color: aliceblue;
-
-}
-.box h5{
-
-    font-size: 15px;
-    letter-spacing: 3px;
-    font-weight: 300;
-    color: rgb(238, 238, 238);
-
-}
 ul{
-
     margin: 0;
     padding: 0;
-
 }
-.box li{
-
+.root_container {
+    top:0;
+    left:0;
+    width:100%;
+    min-height: 100%;
+}
+.app_container {
+    top:0;
+    left:0;
+    width:100%;
+    min-height: 100%;
+    display: grid;
+    grid: "nav_container" 5%
+          "main_container" 1fr / 1fr;
+}
+.main_container {
+    grid-area: main_container;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info_center {
+    width: 100%;
+    display: table-cell;
+    text-align: center;
+}
+.profile_container img {
+    border-radius: 10%;
+    width: 150px;
+    height: 206.25px;
+}
+.profile_container h1 {
+    font-family: Tangerine;
+    font-size: calc(75px + 0.4vw);
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: aliceblue;
+    background: rgba(0, 0, 0, 0.3);
+}
+.profile_container h5 {
+    font-family: "ZCOOL XiaoWei";
+    font-size: calc(15px + 0.4vw);
+    letter-spacing: 3px;
+    font-weight: 450;
+    color: rgb(238, 238, 238);
+    background: rgba(0, 0, 0, 0.3);
+}
+.profile_container li {
     display: inline-block;
     margin:  6px;
     list-style: none;
-
 }
-.box li a .fa.fa-linkedin{
-
+.profile_container li a .fa.fa-linkedin {
     color: rgb(242, 245, 247);
     text-decoration: none;
-    font-size: 50px;
+    font-size: calc(45px + 0.4vw);
     -webkit-transition: 1s ease-out;
     -moz-transition:  1s ease-out;
     transition:  1s ease-out;
-    
 }
-.box li a .fa.fa-linkedin:hover{
-
+.profile_container li a .fa.fa-linkedin:hover {
     -webkit-transform: rotateZ(360deg);
     -moz-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
-
 }
-.box li a .fa.fa-file-text{
-
+.profile_container li a .fa.fa-file-text {
     color: aliceblue;
     text-decoration: none;
-    font-size: 50px;
+    font-size: calc(46px + 0.4vw);
     -webkit-transition: 1s ease-out;
     -moz-transition:  1s ease-out;
     transition:  1s ease-out;
     
 }
-.box li a .fa.fa-file-text:hover{
-
-    font-size: 60px;
-
+.profile_container li a .fa.fa-file-text:hover {
+    font-size: calc(55px + 0.4vw);
 }
-.box li a .fa.fa-envelope{
-
+.profile_container li a .fa.fa-envelope {
     color: aliceblue;
     text-decoration: none;
-    font-size: 50px;
+    font-size: calc(45px + 0.4vw);
     -webkit-transition: 1s ease-out;
     -moz-transition:  1s ease-out;
     transition:  1s ease-out;
-    
 }
-.box li a .fa.fa-envelope:hover{
-
+.profile_container li a .fa.fa-envelope:hover {
     -webkit-transform: rotateZ(360deg);
     -moz-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
-
 }
-.Experience_projects_col{
-
-    width: 450px;
-    padding: 55px;
-    padding-bottom: 0%;
-    border-radius: 10%;
-    display: table-cell;
-
+@media screen and (max-height: 700px){
+    .profile_container img {display: none;}
 }
-.Experience_projects_col h5{
-
-    position: relative;
-    bottom: 130px;
-    font-size: 30px;
-    letter-spacing: 3px;
+.work_info_container {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.work_sfl_container {
+    width: 80%;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-align: center;
+    background: rgba(213,212,210,0.9);
+}
+.work_sfl_container .jami_logo_svg {
+    width: 50%;
+}
+.work_sfl_container a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+}
+.sfl_web_a {
+    color: rgb(226,135,67);
+}
+.jami_web_a {
+    color: rgb(38, 168, 237);
+}
+.jami_gitlab_web_a {
+    color: #000;
+    font-size: calc(45px + 0.4vw);
+}
+.work_sfl_container a:hover {
+    opacity: 0.7
+}
+.work_sfl_container h1{
+    font-size: calc(21px + 0.4vw);
+    letter-spacing: 2px;
     font-weight: 300;
-    color: aliceblue;
+    color: black;
+    font-family: "Raleway";
+}
+.work_sfl_container .work_title{
+    text-decoration: underline;
+}
+.work_sfl_desp {
+    display: inline-block;
+    text-align: left;
+    width: 85%;
+}
+.work_sfl_desp p{
+    font-size: calc(14px + 0.4vw);
+    font-weight: 200;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    color: black;
+    font-family: "Raleway";
+    margin: 5%;
+}
+.nav_container {
+    grid-area: nav_container;
+    margin: 0px;
     padding: 0;
-    margin: 0%;
-
+    height: 100%;
+    width: 100%;
 }
-.Intership_expreience p a{
-
-    position: relative;
-    bottom: 130px;
-    font-size: 25px;
-    font-weight: 10;
-    color: rgba(240, 248, 255, 0.493);
-
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.3);
 }
-.Microprocessor_project p a{
-
+.list {
+    margin-left: 5%;
+    margin-right: 5%;
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    bottom: 130px;
-    font-size: 25px;
-    font-weight: 10;
-    color: rgba(240, 248, 255, 0.493);
-
 }
-.Banker_project p a{
-
-    position: relative;
-    bottom: 130px;
-    font-size: 25px;
-    font-weight: 10;
-    color: rgba(240, 248, 255, 0.493);
-
+.list li {
+    font-size: calc(16px + 0.4vw);
+    width: 20%;
+    text-transform: uppercase;
+    font-family: "ZCOOL XiaoWei";
+    text-align: center;
 }
-.Experience_projects_col p a{
-
+.list li a {
+    cursor: pointer;
+    display: block;
     position: relative;
-    bottom: 130px;
-    font-size: 25px;
-    font-weight: 10;
-    color: rgba(240, 248, 255, 0.493);
-
+    padding: 0.2em 0;
+    text-decoration: none;
+    color: inherit;
 }
-.Experience_projects_col audio{
+.items {
+    color: #f1f1f1;
+}
+/* Fade in */
+.items a::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: #f1f1f1;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.items a:hover::after {
+    transform: scaleX(0.8);
+}
+.current_nav_item {
+    color: #f1f1f1;
+}
+.current_nav_item a::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    transform: scaleX(0.8);
+    background-color: #f1f1f1;
+}
+.menu_button {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    padding: 8px;
+    color: #000;
+    font-size: calc(13px + 0.4vw);
+    font-family: "ZCOOL XiaoWei";
+    text-transform: uppercase;
+}
+@media screen and (max-width: 600px){
+    .list {
+        flex-direction: column;
+        height: auto;
+    }
+    .list li:nth-child(1){
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
+        margin-top: 50px;
+    }
+    .list li {
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
+        text-align: center;
+        margin-right: 0px;
+        padding: 20px 0;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    .items:hover {
+        color: rgb(226,135,67);
+    }
+    .items a:hover::after {
+        transform: scaleX(0);
+    }
+    .current_nav_item {
+        color: rgb(226,135,67);
+    }
+    .current_nav_item a::after{
+        transform: scaleX(0);
+    }
+    .menu_button {
+        display: block;
+    }
 
-    position: relative;
-    bottom: 105px;
-    padding:0;
-
+    .work_sfl_desp {
+        display: none;
+    }
 }
