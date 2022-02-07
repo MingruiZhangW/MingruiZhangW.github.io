@@ -3,6 +3,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 import Navbar from "./Navbar.js";
 import Profile from "./Profile.js";
 import Work from "./Work.js";
+import Projects from "./Projects.js";
 
 export default function App() {
     var navBarInitialStatusMap = { work: false, projects: false, profile: false,
@@ -23,25 +24,35 @@ export default function App() {
         _React$useState4 = _slicedToArray(_React$useState3, 2),
         workClassName = _React$useState4[0],
         setWorkClassName = _React$useState4[1];
+    // projectsClassName state for animation
 
-    var _React$useState5 = React.useState(false),
+
+    var _React$useState5 = React.useState("projects_info_container \
+                                                                      animate__animated \
+                                                                      animate__slideInUp\
+                                                                      animate__delay-0.5s"),
         _React$useState6 = _slicedToArray(_React$useState5, 2),
-        columnNavBarMenuDisplayed = _React$useState6[0],
-        setColumnNavBarMenuDisplayed = _React$useState6[1];
+        projectsClassName = _React$useState6[0],
+        setProjectsClassName = _React$useState6[1];
+
+    var _React$useState7 = React.useState(false),
+        _React$useState8 = _slicedToArray(_React$useState7, 2),
+        columnNavBarMenuDisplayed = _React$useState8[0],
+        setColumnNavBarMenuDisplayed = _React$useState8[1];
     // screen width state detection
 
 
-    var _React$useState7 = React.useState(window.innerWidth),
-        _React$useState8 = _slicedToArray(_React$useState7, 2),
-        screenWidth = _React$useState8[0],
-        setScreenWidth = _React$useState8[1];
+    var _React$useState9 = React.useState(window.innerWidth),
+        _React$useState10 = _slicedToArray(_React$useState9, 2),
+        screenWidth = _React$useState10[0],
+        setScreenWidth = _React$useState10[1];
     // currentNavBarItem tracker
 
 
-    var _React$useState9 = React.useState(Object.assign({}, navBarInitialStatusMap, { profile: true })),
-        _React$useState10 = _slicedToArray(_React$useState9, 2),
-        currentNavBarItem = _React$useState10[0],
-        setCurrentNavBarItem = _React$useState10[1];
+    var _React$useState11 = React.useState(Object.assign({}, navBarInitialStatusMap, { profile: true })),
+        _React$useState12 = _slicedToArray(_React$useState11, 2),
+        currentNavBarItem = _React$useState12[0],
+        setCurrentNavBarItem = _React$useState12[1];
 
     // event listener for screen width change
 
@@ -65,10 +76,11 @@ export default function App() {
 
     // handleProfileButtonClicked
     function showProfileWithAnimation() {
-        // hide NavBarMenu if the profile nav button is clicked
+        // hide NavBarMenu if the nav button is clicked
         if (columnNavBarMenuDisplayed) {
             toggleColumnNavBarMenuDisplayed();
         }
+
         // set to current item
         setCurrentNavBarItem(function () {
             return Object.assign({}, navBarInitialStatusMap, { profile: true });
@@ -87,10 +99,14 @@ export default function App() {
 
     // handleWorkButtonClicked
     function showWorkWithAnimation() {
-        // hide NavBarMenu if the profile nav button is clicked
+        // hide NavBarMenu if the nav button is clicked
         if (columnNavBarMenuDisplayed) {
             toggleColumnNavBarMenuDisplayed();
         }
+
+        // scroll to the top
+        window.scrollTo(0, 0);
+
         // set to current item
         setCurrentNavBarItem(function () {
             return Object.assign({}, navBarInitialStatusMap, { work: true });
@@ -107,6 +123,32 @@ export default function App() {
         setWorkClassName(workShowClassList);
     }
 
+    // handleProjectsButtonClicked
+    function showProjectsWithAnimation() {
+        // hide NavBarMenu if the nav button is clicked
+        if (columnNavBarMenuDisplayed) {
+            toggleColumnNavBarMenuDisplayed();
+        }
+
+        // scroll to the top
+        window.scrollTo(0, 0);
+
+        // set to current item
+        setCurrentNavBarItem(function () {
+            return Object.assign({}, navBarInitialStatusMap, { projects: true });
+        });
+        // start animation
+        var projectsShowClassList = "projects_info_container animate__animated \
+                                       animate__slideInUp animate__delay-0.5s";
+        setProjectsClassName(projectsShowClassList);
+    }
+
+    function clearProjectsAnimation() {
+        // clean animation for the next turn
+        var projectsShowClassList = "projects_info_container";
+        setProjectsClassName(projectsShowClassList);
+    }
+
     return React.createElement(
         "div",
         { className: "app_container", style: { position: currentNavBarItem["profile"] != true ? 'static' : 'fixed' } },
@@ -116,7 +158,7 @@ export default function App() {
             React.createElement(Navbar, { currentNavBarItem: currentNavBarItem,
                 handleProfileButtonClicked: showProfileWithAnimation,
                 handleWorkButtonClicked: showWorkWithAnimation,
-                handleProjectsButtonClicked: showProfileWithAnimation,
+                handleProjectsButtonClicked: showProjectsWithAnimation,
                 handleInterestsButtonClicked: showProfileWithAnimation,
                 handleContactButtonClicked: showProfileWithAnimation,
                 requireColumnNavBarDisplayedToggle: toggleColumnNavBarMenuDisplayed,
@@ -129,7 +171,9 @@ export default function App() {
             currentNavBarItem["profile"] && React.createElement(Profile, { requiredProfileClassName: profileClassName,
                 profileAnimationEnded: clearProfileAnimation }),
             currentNavBarItem["work"] && React.createElement(Work, { requiredWorkClassName: workClassName,
-                workAnimationEnded: clearWorkAnimation })
+                workAnimationEnded: clearWorkAnimation }),
+            currentNavBarItem["projects"] && React.createElement(Projects, { requiredProjectsClassName: projectsClassName,
+                projectsAnimationEnded: clearProjectsAnimation })
         )
     );
 }

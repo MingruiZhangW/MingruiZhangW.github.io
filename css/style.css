@@ -132,6 +132,16 @@ ul{
     flex-direction: column;
     align-items: center;
 }
+.projects_info_container {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .work_exp_container {
     width: 80%;
     border-radius: 30px;
@@ -139,8 +149,51 @@ ul{
     text-align: center;
     background: rgba(213,212,210,0.9);
 }
+.project_info {
+    width: 80%;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-align: center;
+    background: rgba(213,212,210,0.9);
+}
+.cir_sim_app_img {
+    width: 70%;
+    height: 530px;
+}
+.linear_rlc_ac_ana {
+    width: 40%;
+    height: 250px;
+}
+.linear_rlc_ac_ana_res {
+    width: 55%;
+    height: 480px;
+}
+.linear_rlc_ac_ana_res_lt {
+    width: 50%;
+    height: 450px;
+}
+.micro_pro_img {
+    width: 55%;
+    height: 480px;
+}
 .work_exp_container .jami_logo_svg {
     width: 50%;
+}
+.project_info .matlab_logo_svg {
+    width: 50%;
+    height: 50%;
+    display: none;
+}
+.project_info .st_logo_svg {
+    width: 40%;
+    height: 40%;
+    display: none;
+}
+.project_info .project_desp_a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
 }
 .work_exp_container a {
     text-decoration: none;
@@ -158,8 +211,14 @@ ul{
     color: #000;
     font-size: calc(45px + 0.4vw);
 }
+.project_desp_a {
+    color: rgb(38, 168, 237);
+}
+.project_info .project_desp_a:hover {
+    opacity: 0.6
+}
 .work_exp_container a:hover {
-    opacity: 0.7
+    opacity: 0.6
 }
 .work_exp_container h1 {
     font-size: calc(21px + 0.4vw);
@@ -168,7 +227,21 @@ ul{
     color: black;
     font-family: "Raleway";
 }
+.project_info h1 {
+    font-size: calc(25px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: rgb(226,135,67);
+    font-family: "Raleway";
+}
 .work_exp_container h2 {
+    font-size: calc(16px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: black;
+    font-family: "Raleway";
+}
+.project_info h2 {
     font-size: calc(16px + 0.4vw);
     letter-spacing: 2px;
     font-weight: 600;
@@ -183,6 +256,11 @@ ul{
     text-align: left;
     width: 85%;
 }
+.project_desp {
+    display: inline-block;
+    text-align: left;
+    width: 85%;
+}
 .work_desp p {
     font-size: calc(14px + 0.4vw);
     font-weight: 200;
@@ -191,6 +269,29 @@ ul{
     color: black;
     font-family: "Raleway";
     margin: 5%;
+}
+.project_desp p {
+    font-size: calc(14px + 0.4vw);
+    font-weight: 200;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    color: black;
+    font-family: "Raleway";
+    margin: 5%;
+}
+.view_github {
+    font-weight: 700;
+    font-size: 70px;
+    color: black;
+    padding: 1.25rem;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    transition: background-color 500ms linear;
 }
 .nav_container {
     grid-area: nav_container;
@@ -311,6 +412,38 @@ nav {
         display: none;
     }
     .intern_video {
+        display: none;
+    }
+
+    .project_info h3 {
+        display: none;
+    }
+    .project_info .matlab_logo_svg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .project_info .st_logo_svg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .project_desp {
+        display: none;
+    }
+    .cir_sim_app_img {
+        display: none;
+    }
+    .linear_rlc_ac_ana {
+        display: none;
+    }
+    .linear_rlc_ac_ana_res {
+        display: none;
+    }
+    .linear_rlc_ac_ana_res_lt {
+        display: none;
+    }
+    .micro_pro_img {
         display: none;
     }
 }
