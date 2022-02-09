@@ -1,4 +1,4 @@
-import Navbar from "./Navbar.js"
+import Navbar from "./NavBar.js"
 import Profile from "./Profile.js"
 import Work from "./Work.js"
 import Projects from "./Projects.js"
