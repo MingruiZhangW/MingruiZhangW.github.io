@@ -156,6 +156,16 @@ audio {
     flex-direction: column;
     align-items: center;
 }
+.contact_info_container {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .work_exp_container {
     width: 80%;
     border-radius: 30px;
@@ -176,6 +186,17 @@ audio {
     margin-top: 30px;
     text-align: center;
     background: rgba(213,212,210,0.9);
+}
+.contact_info_center {
+    width: 80%;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-align: center;
+    background: rgba(213,212,210,0.9);
+}
+.contact_info_center h1 {
+    font-size: calc(30px + 0.4vw);
+    font-family: "ZCOOL XiaoWei";
 }
 .interests_info audio {
     padding-bottom: 10px;
@@ -379,6 +400,86 @@ audio {
     vertical-align: middle;
     border: 1px solid transparent;
     transition: background-color 500ms linear;
+}
+.contact_method_list_a_github {
+    color: black;
+    background: rgba(117, 114, 114, 0.651);
+    transition: transform 500ms ease-in-out;
+    transition: 600ms ease-in-out;
+}
+.contact_method_list_a_github:hover {
+    background: black;
+    transform: scale(1.1, 1.1);
+    border: 1px #eee solid;
+    color: white;
+}
+.contact_method_list_a_linkedin {
+    color: black;
+    background: rgba(117, 114, 114, 0.651);
+    transition: transform 500ms ease-in-out;
+    transition: 600ms ease-in-out;
+}
+.contact_method_list_a_linkedin:hover {
+    background: white;
+    transform: scale(1.1, 1.1);
+    border: 1px #eee solid;
+    color: #0a66c2;
+}
+.contact_method_list a {
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0px 3px 3px 0px rgb(0 0 0 / 10%);
+    font-weight: 700;
+    padding: 1.25rem 2.5rem;
+    font-size: calc(16px + 0.4vw);
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+.contact_method_list {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact_method_list_item {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact_method_list_span {
+    font-size: calc(16px + 0.4vw);
+    font-family: "ZCOOL XiaoWei";
+    font-weight: 700;
+    box-shadow: 0px 3px 3px 0px rgb(0 0 0 / 10%);
+    padding: 1.25rem 1.5rem;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    color: black;
+    background: rgba(117, 114, 114, 0.651);
+    transition: transform 500ms ease-in-out;
+    transition: 600ms ease-in-out;
+}
+.contact_method_list_span:hover {
+    background: white;
+    transform: scale(1.1, 1.1);
+    border: 1px #eee solid;
+    color: #0a66c2;
 }
 .nav_container {
     grid-area: nav_container;
