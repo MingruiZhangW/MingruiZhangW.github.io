@@ -21,6 +21,10 @@ ul{
     margin: 0;
     padding: 0;
 }
+audio {
+    width: 300px;
+    height: 54px;
+}
 .root_container {
     top:0;
     left:0;
@@ -142,6 +146,16 @@ ul{
     flex-direction: column;
     align-items: center;
 }
+.interests_info_container {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .work_exp_container {
     width: 80%;
     border-radius: 30px;
@@ -155,6 +169,23 @@ ul{
     margin-top: 30px;
     text-align: center;
     background: rgba(213,212,210,0.9);
+}
+.interests_info {
+    width: 80%;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-align: center;
+    background: rgba(213,212,210,0.9);
+}
+.interests_info audio {
+    padding-bottom: 10px;
+}
+.holds-the-iframe {
+    background:url(../resources/img/loading.gif) center center no-repeat;
+}
+.zi_de_logo {
+    width: 300px;
+    height: 250px;
 }
 .cir_sim_app_img {
     width: 70%;
@@ -176,6 +207,14 @@ ul{
     width: 55%;
     height: 480px;
 }
+.bilibili_logo {
+    width: 150px;
+    height: 100px;
+}
+.sound_of_silence_img {
+    width: 35%;
+    height: 250px;
+}
 .work_exp_container .jami_logo_svg {
     width: 50%;
 }
@@ -195,7 +234,18 @@ ul{
     opacity: 1;
     transition: 0.3s;
 }
+.zi_de_bilibili {
+    text-decoration: none;
+    cursor: pointer;
+}
 .work_exp_container a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+}
+.cover_version_sos a {
+    color: rgb(226,135,67);
     text-decoration: none;
     cursor: pointer;
     opacity: 1;
@@ -220,6 +270,9 @@ ul{
 .work_exp_container a:hover {
     opacity: 0.6
 }
+.cover_version_sos a:hover {
+    opacity: 0.6
+}
 .work_exp_container h1 {
     font-size: calc(21px + 0.4vw);
     letter-spacing: 2px;
@@ -232,6 +285,40 @@ ul{
     letter-spacing: 2px;
     font-weight: 300;
     color: rgb(226,135,67);
+    font-family: "Raleway";
+}
+.zi_de_title {
+    font-size: calc(65px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: black;
+    font-family: "Liu Jian Mao Cao";
+}
+.du_fu_ming_yue {
+    font-size: calc(35px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: black;
+    font-family: "Ma Shan Zheng";
+}
+.zi_de_fan {
+    font-size: calc(25px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: black;
+    font-family: "Liu Jian Mao Cao";
+}
+.cover_version_sos {
+    font-size: calc(25px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: rgb(226,135,67);
+    font-family: "Raleway";
+}
+.sound_of_silence_title {
+    font-size: calc(25px + 0.4vw);
+    letter-spacing: 2px;
+    font-weight: 300;
     font-family: "Raleway";
 }
 .work_exp_container h2 {
@@ -444,6 +531,19 @@ nav {
         display: none;
     }
     .micro_pro_img {
+        display: none;
+    }
+
+    .interests_info audio {
+       width: 150px;
+    }
+    .zi_de_fan {
+        display: none;
+    }
+    .holds-the-iframe {
+        display: none;
+    }
+    .zi_de_logo {
         display: none;
     }
 }

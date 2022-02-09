@@ -10,7 +10,7 @@ export default function Projects(props) {
                 { className: "view_github", href: "https://github.com/MingruiZhangW",
                     target: "_blank", rel: "noopener noreferrer",
                     title: "Ming's GitHub" },
-                React.createElement("i", { "class": "fa fa-github" })
+                React.createElement("i", { className: "fa fa-github" })
             )
         ),
         React.createElement(

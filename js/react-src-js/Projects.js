@@ -5,7 +5,7 @@ export default function Projects(props) {
                 <a className="view_github" href="https://github.com/MingruiZhangW"
                    target="_blank" rel="noopener noreferrer"
                    title="Ming's GitHub">
-                       <i class="fa fa-github"></i>
+                       <i className="fa fa-github"></i>
                 </a>
             </div>
             <div className="project_info">

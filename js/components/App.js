@@ -4,6 +4,7 @@ import Navbar from "./Navbar.js";
 import Profile from "./Profile.js";
 import Work from "./Work.js";
 import Projects from "./Projects.js";
+import Interests from "./Interests.js";
 
 export default function App() {
     var navBarInitialStatusMap = { work: false, projects: false, profile: false,
@@ -34,25 +35,35 @@ export default function App() {
         _React$useState6 = _slicedToArray(_React$useState5, 2),
         projectsClassName = _React$useState6[0],
         setProjectsClassName = _React$useState6[1];
+    // interestsClassName state for animation
 
-    var _React$useState7 = React.useState(false),
+
+    var _React$useState7 = React.useState("interests_info_container \
+                                                                        animate__animated \
+                                                                        animate__slideInUp\
+                                                                        animate__delay-0.5s"),
         _React$useState8 = _slicedToArray(_React$useState7, 2),
-        columnNavBarMenuDisplayed = _React$useState8[0],
-        setColumnNavBarMenuDisplayed = _React$useState8[1];
+        interestsClassName = _React$useState8[0],
+        setInterestsClassName = _React$useState8[1];
+
+    var _React$useState9 = React.useState(false),
+        _React$useState10 = _slicedToArray(_React$useState9, 2),
+        columnNavBarMenuDisplayed = _React$useState10[0],
+        setColumnNavBarMenuDisplayed = _React$useState10[1];
     // screen width state detection
 
 
-    var _React$useState9 = React.useState(window.innerWidth),
-        _React$useState10 = _slicedToArray(_React$useState9, 2),
-        screenWidth = _React$useState10[0],
-        setScreenWidth = _React$useState10[1];
+    var _React$useState11 = React.useState(window.innerWidth),
+        _React$useState12 = _slicedToArray(_React$useState11, 2),
+        screenWidth = _React$useState12[0],
+        setScreenWidth = _React$useState12[1];
     // currentNavBarItem tracker
 
 
-    var _React$useState11 = React.useState(Object.assign({}, navBarInitialStatusMap, { profile: true })),
-        _React$useState12 = _slicedToArray(_React$useState11, 2),
-        currentNavBarItem = _React$useState12[0],
-        setCurrentNavBarItem = _React$useState12[1];
+    var _React$useState13 = React.useState(Object.assign({}, navBarInitialStatusMap, { profile: true })),
+        _React$useState14 = _slicedToArray(_React$useState13, 2),
+        currentNavBarItem = _React$useState14[0],
+        setCurrentNavBarItem = _React$useState14[1];
 
     // event listener for screen width change
 
@@ -149,6 +160,32 @@ export default function App() {
         setProjectsClassName(projectsShowClassList);
     }
 
+    // handleInterestsButtonClicked
+    function showInterestsWithAnimation() {
+        // hide NavBarMenu if the nav button is clicked
+        if (columnNavBarMenuDisplayed) {
+            toggleColumnNavBarMenuDisplayed();
+        }
+
+        // scroll to the top
+        window.scrollTo(0, 0);
+
+        // set to current item
+        setCurrentNavBarItem(function () {
+            return Object.assign({}, navBarInitialStatusMap, { interests: true });
+        });
+        // start animation
+        var interestsShowClassList = "interests_info_container animate__animated \
+                                        animate__slideInUp animate__delay-0.5s";
+        setInterestsClassName(interestsShowClassList);
+    }
+
+    function clearInterestsAnimation() {
+        // clean animation for the next turn
+        var interestsShowClassList = "interests_info_container";
+        setInterestsClassName(interestsShowClassList);
+    }
+
     return React.createElement(
         "div",
         { className: "app_container", style: { position: currentNavBarItem["profile"] != true ? 'static' : 'fixed' } },
@@ -159,7 +196,7 @@ export default function App() {
                 handleProfileButtonClicked: showProfileWithAnimation,
                 handleWorkButtonClicked: showWorkWithAnimation,
                 handleProjectsButtonClicked: showProjectsWithAnimation,
-                handleInterestsButtonClicked: showProfileWithAnimation,
+                handleInterestsButtonClicked: showInterestsWithAnimation,
                 handleContactButtonClicked: showProfileWithAnimation,
                 requireColumnNavBarDisplayedToggle: toggleColumnNavBarMenuDisplayed,
                 isColumnNavBarDisplayed: columnNavBarMenuDisplayed,
@@ -173,7 +210,9 @@ export default function App() {
             currentNavBarItem["work"] && React.createElement(Work, { requiredWorkClassName: workClassName,
                 workAnimationEnded: clearWorkAnimation }),
             currentNavBarItem["projects"] && React.createElement(Projects, { requiredProjectsClassName: projectsClassName,
-                projectsAnimationEnded: clearProjectsAnimation })
+                projectsAnimationEnded: clearProjectsAnimation }),
+            currentNavBarItem["interests"] && React.createElement(Interests, { requiredInterestsClassName: interestsClassName,
+                interestsAnimationEnded: clearInterestsAnimation })
         )
     );
 }

@@ -2,6 +2,7 @@ import Navbar from "./Navbar.js"
 import Profile from "./Profile.js"
 import Work from "./Work.js"
 import Projects from "./Projects.js"
+import Interests from "./Interests.js"
 
 export default function App() {
     const navBarInitialStatusMap = {work : false, projects : false, profile : false,
@@ -18,6 +19,11 @@ export default function App() {
                                                                       animate__animated \
                                                                       animate__slideInUp\
                                                                       animate__delay-0.5s")
+    // interestsClassName state for animation
+    const [interestsClassName, setInterestsClassName] = React.useState("interests_info_container \
+                                                                        animate__animated \
+                                                                        animate__slideInUp\
+                                                                        animate__delay-0.5s")
 
     const [columnNavBarMenuDisplayed, setColumnNavBarMenuDisplayed] = React.useState(false)
     // screen width state detection
@@ -118,6 +124,32 @@ export default function App() {
         setProjectsClassName(projectsShowClassList)
     }
 
+    // handleInterestsButtonClicked
+    function showInterestsWithAnimation() {
+        // hide NavBarMenu if the nav button is clicked
+        if (columnNavBarMenuDisplayed) {
+            toggleColumnNavBarMenuDisplayed()
+        }
+
+        // scroll to the top
+        window.scrollTo(0, 0)
+
+        // set to current item
+        setCurrentNavBarItem(() => {
+            return {...navBarInitialStatusMap, interests : true}
+        })
+        // start animation
+        const interestsShowClassList = "interests_info_container animate__animated \
+                                        animate__slideInUp animate__delay-0.5s"
+        setInterestsClassName(interestsShowClassList)
+    }
+
+    function clearInterestsAnimation() {
+        // clean animation for the next turn
+        const interestsShowClassList = "interests_info_container"
+        setInterestsClassName(interestsShowClassList)
+    }
+
     return (
         <div className="app_container" style={{position : currentNavBarItem["profile"] != true ? 'static': 'fixed'}}>
             <div className="nav_container">
@@ -125,7 +157,7 @@ export default function App() {
                         handleProfileButtonClicked={showProfileWithAnimation}
                         handleWorkButtonClicked={showWorkWithAnimation}
                         handleProjectsButtonClicked={showProjectsWithAnimation}
-                        handleInterestsButtonClicked={showProfileWithAnimation}
+                        handleInterestsButtonClicked={showInterestsWithAnimation}
                         handleContactButtonClicked={showProfileWithAnimation}
                         requireColumnNavBarDisplayedToggle={toggleColumnNavBarMenuDisplayed}
                         isColumnNavBarDisplayed={columnNavBarMenuDisplayed}
@@ -141,6 +173,9 @@ export default function App() {
                 {currentNavBarItem["projects"] &&
                     <Projects requiredProjectsClassName={projectsClassName}
                               projectsAnimationEnded={clearProjectsAnimation}/>}
+                {currentNavBarItem["interests"] &&
+                    <Interests requiredInterestsClassName={interestsClassName}
+                               interestsAnimationEnded={clearInterestsAnimation}/>}
             </div>
         </div>
     )
