@@ -19,6 +19,69 @@ export default function Projects(props) {
             React.createElement(
                 "h1",
                 null,
+                "A Simple DFO Like Game"
+            ),
+            React.createElement("img", { className: "dfo_like_game_main_page",
+                src: "resources/img/main_page.PNG", alt: "Main Page" }),
+            React.createElement(
+                "div",
+                { className: "project_desp" },
+                React.createElement(
+                    "p",
+                    null,
+                    "Dungeon Fighter Online (DFO), known in China as Dungeon & Fighter (DNF), is a multiplayer beat-\u2019em-up action role-playing game (Dungeon fighter online 2022). In general, the players in this game could traverse 2d screens while fighting hordes of monsters with their unique skills. A basic demonstration of the gameplay can be found ",
+                    React.createElement(
+                        "a",
+                        { className: "normal_web_link",
+                            title: "\u3010Citris\u3011\u5929\u5E37\u5DE8\u517D\u7BC7",
+                            href: "https://www.bilibili.com/video/BV1dF411p73R?share_source=copy_web&vd_source=36c43cc5514d74d7b9d83cae3b5b10e1",
+                            target: "_blank", rel: "noopener noreferrer" },
+                        "here"
+                    ),
+                    ", and a more advanced gameplay with more can be found ",
+                    React.createElement(
+                        "a",
+                        { className: "normal_web_link",
+                            title: "\u3010\u9984\u9968\u54E5\u5251\u9B42\u5E38\u89C4MP\u5237\u56FE\u88C5\u7EFF\u6C99\u888B1390\u4EBF\uFF01\u3011",
+                            href: "https://www.bilibili.com/video/BV1a34y1W7TC?share_source=copy_web&vd_source=36c43cc5514d74d7b9d83cae3b5b10e1",
+                            target: "_blank", rel: "noopener noreferrer" },
+                        "here"
+                    ),
+                    "."
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "For this project, the goal is to create a simplified DFO-like 2d game by using pure OpenGL. The game will contain one main character for the player to use, one type of monster, and one NPC. A small story, a basic game flow, and some BGMs in general will provide the player with a relatively complete experience. Some UI elements, including dialog boxes, buttons, etc., are also presented throughout the game."
+                )
+            ),
+            React.createElement(
+                "div",
+                { className: "intern_video" },
+                React.createElement(
+                    "h2",
+                    null,
+                    "General flow of the game"
+                ),
+                React.createElement(
+                    "video",
+                    { width: "50%", height: "400", controls: true },
+                    React.createElement("source", { src: "resources/media/488project.mp4", type: "video/mp4" }),
+                    "Your browser does not support the video tag."
+                )
+            ),
+            React.createElement(
+                "h4",
+                { className: "project_duration" },
+                "June - July 2022"
+            )
+        ),
+        React.createElement(
+            "div",
+            { className: "project_info" },
+            React.createElement(
+                "h1",
+                null,
                 "MATLAB Based Circuit Simulator"
             ),
             React.createElement("img", { className: "matlab_logo_svg", src: "resources/img/matlab_logo.svg", alt: "MATLAB logo" }),

@@ -9,6 +9,47 @@ export default function Projects(props) {
                 </a>
             </div>
             <div className="project_info">
+                <h1>A Simple DFO Like Game</h1>
+                <img className="dfo_like_game_main_page"
+                     src="resources/img/main_page.PNG" alt="Main Page"/>
+                <div className="project_desp">
+                    <p>
+                        Dungeon Fighter Online (DFO), known in China as Dungeon &
+                        Fighter (DNF), is a multiplayer beat-’em-up action role-playing
+                        game (Dungeon fighter online 2022). In general, the players in this
+                        game could traverse 2d screens while fighting hordes of monsters
+                        with their unique skills. A basic demonstration of the gameplay can
+                        be found <a className="normal_web_link" 
+                                    title="【Citris】天帷巨兽篇"
+                                    href="https://www.bilibili.com/video/BV1dF411p73R?share_source=copy_web&vd_source=36c43cc5514d74d7b9d83cae3b5b10e1"
+                                    target="_blank" rel="noopener noreferrer">here</a>,
+                        and a more advanced gameplay with more can be found <a className="normal_web_link" 
+                                                                               title="【馄饨哥剑魂常规MP刷图装绿沙袋1390亿！】"
+                                    href="https://www.bilibili.com/video/BV1a34y1W7TC?share_source=copy_web&vd_source=36c43cc5514d74d7b9d83cae3b5b10e1"
+                                    target="_blank" rel="noopener noreferrer">here</a>.
+                    </p>
+                    <p> 
+                        For this project, the goal is to create a simplified DFO-like 2d
+                        game by using pure OpenGL. The game will contain one main
+                        character for the player to use, one type of monster, and one NPC.
+                        A small story, a basic game flow, and some BGMs in general will
+                        provide the player with a relatively complete experience. Some UI
+                        elements, including dialog boxes, buttons, etc., are also presented
+                        throughout the game.
+                    </p>
+                </div>
+                <div className="intern_video">
+                    <h2>General flow of the game</h2>
+                    <video width="50%" height="400" controls>
+                            <source src="resources/media/488project.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h4 className="project_duration">
+                    June - July 2022
+                </h4>
+            </div>
+            <div className="project_info">
                 <h1>MATLAB Based Circuit Simulator</h1>
                 <img className="matlab_logo_svg" src="resources/img/matlab_logo.svg" alt="MATLAB logo"/>
                 <img className="cir_sim_app_img"

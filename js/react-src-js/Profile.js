@@ -4,8 +4,8 @@ export default function Profile(props) {
             <div className="info_center">
                 <img src="resources/img/profile.jpg" alt="Smiley face"></img>
                 <h1> Mingrui Zhang</h1>
-                <h5> McGill University</h5>
-                <h5> Bachelor of Electrical Engineering</h5>
+                <h5> McGill University - B.E.E.</h5>
+                <h5> University of Waterloo - MEng in ECE</h5>
                 <h5> Software Developer</h5>
                 <ul>
                     <li>

@@ -14,12 +14,12 @@ export default function Profile(props) {
             React.createElement(
                 "h5",
                 null,
-                " McGill University"
+                " McGill University - B.E.E."
             ),
             React.createElement(
                 "h5",
                 null,
-                " Bachelor of Electrical Engineering"
+                " University of Waterloo - MEng in ECE"
             ),
             React.createElement(
                 "h5",

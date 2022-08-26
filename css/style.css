@@ -212,6 +212,10 @@ audio {
     width: 70%;
     height: 530px;
 }
+.dfo_like_game_main_page {
+    width: 70%;
+    height: width / 1.288;
+}
 .linear_rlc_ac_ana {
     width: 40%;
     height: 250px;
@@ -620,6 +624,9 @@ nav {
         display: none;
     }
     .cir_sim_app_img {
+        display: none;
+    }
+    .dfo_like_game_main_page {
         display: none;
     }
     .linear_rlc_ac_ana {
