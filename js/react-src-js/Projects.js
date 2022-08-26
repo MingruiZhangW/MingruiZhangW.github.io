@@ -11,7 +11,7 @@ export default function Projects(props) {
             <div className="project_info">
                 <h1>A Simple DFO Like Game</h1>
                 <img className="dfo_like_game_main_page"
-                     src="resources/img/main_page.PNG" alt="Main Page"/>
+                     src="resources/img/main_page.png" alt="Main Page"/>
                 <div className="project_desp">
                     <p>
                         Dungeon Fighter Online (DFO), known in China as Dungeon &

@@ -22,7 +22,7 @@ export default function Projects(props) {
                 "A Simple DFO Like Game"
             ),
             React.createElement("img", { className: "dfo_like_game_main_page",
-                src: "resources/img/main_page.PNG", alt: "Main Page" }),
+                src: "resources/img/main_page.png", alt: "Main Page" }),
             React.createElement(
                 "div",
                 { className: "project_desp" },
