@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Badge } from '@/components/ui/badge';
+import { Badge } from './ui/Badge';
 import { Award, Code, Cloud, Settings } from 'lucide-react';
 
 export default function SkillsSection() {

@@ -1,10 +1,9 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Message } from '@/entities/Message';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from './ui/Button';
+import { Input } from './ui/Input';
+import { Textarea } from './ui/Textarea';
 import { Send, Phone, Mail, CheckCircle, Check } from 'lucide-react';
 
 export default function ContactSection() {
@@ -30,7 +29,8 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      await Message.create(formData);
+      // TODO
+      //await Message.create(formData);
       setIsSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       

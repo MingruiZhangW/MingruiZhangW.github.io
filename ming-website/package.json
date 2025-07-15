@@ -8,7 +8,6 @@
     "start": "vite",
     "build": "vite build --base=/",
     "build:ci": "vite build --base=/--PUBLIC_URL--",
-    "postbuild": "xcopy /Y /I /C /E /R /V /S build ..\\Montrium.Connect.FrontEnd.WebApi\\Spa\\ > nul",
     "build-storybook": "build-storybook -s public",
     "server": "sh ./scripts/run-apis.sh",
     "storybook": "start-storybook -p 9009 -s public",
@@ -21,8 +20,12 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "lucide-react": "^0.525.0",
+    "motion": "^12.23.5",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
