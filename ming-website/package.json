@@ -1,0 +1,42 @@
+{
+  "name": "ming-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build --base=/",
+    "build:ci": "vite build --base=/--PUBLIC_URL--",
+    "build-storybook": "build-storybook -s public",
+    "server": "sh ./scripts/run-apis.sh",
+    "storybook": "start-storybook -p 9009 -s public",
+    "test": "vitest --watch=false",
+    "test:ci": "cross-env CI=true vitest --coverage",
+    "test:ui": "vitest --ui --reporter=dot",
+    "tdd": "vitest",
+    "vitest-preview": "vitest-preview",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "emailjs-com": "^3.2.0",
+    "lucide-react": "^0.525.0",
+    "motion": "^12.23.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.0.4"
+  }
+}
