@@ -47,7 +47,7 @@ export default function AboutSection() {
               With a Master's in Electrical and Computer Engineering from the University of Waterloo and a Bachelor's from McGill University, I specialize in building scalable and maintainable backend systems.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              My experience spans developing SaaS platforms on .NET and Azure, enhancing data analytic pipelines, and maintaining robust CI/CD infrastructure. I am proficient in migrating and modernizing legacy systems, such as moving from Qt Widgets to QML for multi-platform development.
+              My experience spans developing SaaS platforms on .NET and Azure, enhancing data analytic pipelines, and maintaining robust CI/CD infrastructure. I have had the opportunity to work on migrating and modernizing legacy systems, such as assisting with the transition from Qt Widgets to QML for multi-platform development.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
               I am passionate about tackling complex technical challenges and contributing to the entire software development lifecycle, from design to deployment.

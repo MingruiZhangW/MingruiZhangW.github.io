@@ -14,6 +14,10 @@ export default function Footer() {
     });
   };
 
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-slate-900 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,24 +33,44 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-slate-400 hover:text-white transition-colors duration-200">
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
                   About
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#skills" className="text-slate-400 hover:text-white transition-colors duration-200">
+                <button 
+                  onClick={() => scrollToSection('skills')} 
+                  className="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
                   Skills
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#work-experience" className="text-slate-400 hover:text-white transition-colors duration-200">
+                <button 
+                  onClick={() => scrollToSection('interests')} 
+                  className="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
+                  Interests
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('work-experience')} 
+                  className="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
                   Work Experience
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#contact" className="text-slate-400 hover:text-white transition-colors duration-200">
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
                   Contact
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -55,25 +79,28 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a
-                href="https://mingruizhangw.github.io/"
+                href="https://www.linkedin.com/in/mingruizhangee/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200"
+                title="Linkedin"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={'../../Resources/Pdf/Resume Mingrui Zhang.pdf'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200"
+                title="View Resume"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z" /></svg>
               </a>
               <div className="relative">
                 <button
                   onClick={handleCopy}
                   className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200"
+                  title="Copy Email"
                 >
                   {copied ? <Check className="w-5 h-5 text-green-500" /> : <Mail className="w-5 h-5" />}
                 </button>

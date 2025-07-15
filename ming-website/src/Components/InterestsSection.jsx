@@ -80,6 +80,7 @@ export default function InterestsSection() {
         {`
           @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
           @import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
         `}
       </style>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,10 +177,6 @@ export default function InterestsSection() {
                     </div>
                   </div>
                 </div>
-                <p className="text-slate-600 leading-relaxed mt-4">
-                  This beautiful piece reflects the harmony between technology and traditional arts, 
-                  reminding me that innovation can coexist with cultural heritage.
-                </p>
               </div>
             </div>
           </motion.div>
@@ -193,25 +190,31 @@ export default function InterestsSection() {
             className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <div className="max-w-2xl mx-auto">
-              <h3 className="text-2xl font-semibold text-slate-900 text-center mb-8">
+              <h3 className="text-2xl font-semibold text-slate-900 text-center mb-8" style={{ fontFamily: '"Dancing Script", cursive', fontSize: '2.5rem', fontWeight: '700' }}>
                 The Sound Of Silence
               </h3>
               
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
                 <audio
                   ref={audioRef}
-                  src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                  src={('../../Resources/Music/soundofsclience.mp3')}
                   preload="metadata"
                 />
                 
-                {/* Album Art Placeholder */}
-                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-slate-400 to-slate-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  <div className="text-white text-4xl font-bold">♪</div>
+                {/* Album Art */}
+                <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={('../../Resources/Image/SimonGarfunkel.png')}
+                    alt="Simon & Garfunkel"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 <div className="text-center mb-6">
                   <h4 className="text-lg font-medium text-slate-900">The Sound Of Silence</h4>
-                  <p className="text-slate-600">Cover Version</p>
+                  <span className="inline-block px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium rounded-full shadow-sm mt-2">
+                    Cover Version
+                  </span>
                 </div>
                 
                 {/* Progress Bar */}
@@ -268,10 +271,6 @@ export default function InterestsSection() {
                 </div>
               </div>
               
-              <p className="text-slate-600 leading-relaxed text-center mt-6">
-                Music has always been a companion in my coding journey. This haunting cover of 
-                "The Sound Of Silence" captures the quiet moments of reflection that fuel creativity.
-              </p>
             </div>
           </motion.div>
         </div>

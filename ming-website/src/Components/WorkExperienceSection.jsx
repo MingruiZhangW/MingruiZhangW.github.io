@@ -79,9 +79,9 @@ export default function WorkExperienceSection() {
                         <span className="flex items-center"><Calendar className="w-4 h-4 mr-2" />{exp.period}</span>
                       </div>
                     </div>
-                    <ul className="space-y-3 list-disc list-inside text-slate-700">
+                    <ul className="space-y-3 list-disc list-outside text-slate-700 pl-5">
                       {exp.description.map((item, i) => (
-                        <li key={i}>{item}</li>
+                        <li key={i} className="leading-relaxed">{item}</li>
                       ))}
                     </ul>
                   </div>

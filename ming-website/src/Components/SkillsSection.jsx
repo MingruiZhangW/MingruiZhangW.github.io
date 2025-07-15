@@ -17,11 +17,24 @@ export default function SkillsSection() {
     {
       title: 'DevOps & Tools',
       icon: Settings,
-      skills: ['Azure DevOps', 'Jenkins', 'CI/CD', 'Git', 'CMake', 'Wix']
+      skills: ['Azure DevOps', 'Bicep', 'Jenkins', 'CMake', 'AI IDEs']
     }
   ];
 
-  const certifications = ["AZ-900: Microsoft Azure Fundamentals", "AZ-204: Developing Solutions for Microsoft Azure"];
+  const certifications = [
+    {
+      name: "AZ-400: DevOps Engineer Expert",
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/MingruiZhang-3029/199CA1209FBD6839?sharingId=24B59E6AA80222F0"
+    },
+    {
+      name: "AZ-204: Azure Developer Associate", 
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/MingruiZhang-3029/D7955010A8363AB7?sharingId=24B59E6AA80222F0"
+    },
+    {
+      name: "AZ-900: Azure Fundamentals",
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/MingruiZhang-3029/907FA235A32AB3DF?sharingId=24B59E6AA80222F0"
+    }
+  ];
 
   return (
     <section id="skills" className="py-24 bg-slate-50">
@@ -99,7 +112,7 @@ export default function SkillsSection() {
               </div>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-6">Certifications</h3>
-            <div className="flex flex-wrap justify-center items-center gap-4">
+            <div className="flex flex-col justify-center items-center gap-4">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
@@ -108,10 +121,17 @@ export default function SkillsSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
                 >
-                  <Badge className="bg-green-50 text-green-800 text-base px-6 py-3 rounded-xl border border-green-200 shadow-sm hover:shadow-lg hover:bg-green-100 transition-all duration-500">
-                    <Award className="w-4 h-4 mr-2"/>
-                    {cert}
-                  </Badge>
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Badge className="bg-green-50 text-green-800 text-base px-6 py-3 rounded-xl border border-green-200 shadow-sm hover:shadow-lg hover:bg-green-100 transition-all duration-500 cursor-pointer">
+                      <Award className="w-4 h-4 mr-2"/>
+                      {cert.name}
+                    </Badge>
+                  </a>
                 </motion.div>
               ))}
             </div>
