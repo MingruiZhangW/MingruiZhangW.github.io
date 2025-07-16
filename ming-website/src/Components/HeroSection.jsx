@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div className="relative w-56 h-56 mx-auto mb-8 flex items-center justify-center">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 p-1 shadow-2xl" />
             <img
-              src={'../../Resources/Image/profile.jpg'}
+              src="/Image/profile.jpg"
               alt="Profile"
               className="relative w-56 h-56 object-cover rounded-full shadow-xl border-4 border-white transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               style={{ zIndex: 1 }}

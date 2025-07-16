@@ -7,5 +7,15 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss()
-  ]
+  ],
+  base: '/',
+  publicDir: 'Resources',
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    }
+  }
 })

@@ -88,7 +88,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href={'../../Resources/Pdf/Resume Mingrui Zhang.pdf'}
+                href="/Pdf/Resume Mingrui Zhang.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200"

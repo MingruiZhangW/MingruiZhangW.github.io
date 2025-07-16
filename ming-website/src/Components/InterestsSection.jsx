@@ -197,14 +197,14 @@ export default function InterestsSection() {
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
                 <audio
                   ref={audioRef}
-                  src={('../../Resources/Music/soundofsclience.mp3')}
+                  src="/Music/soundofsclience.mp3"
                   preload="metadata"
                 />
                 
                 {/* Album Art */}
                 <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src={('../../Resources/Image/SimonGarfunkel.png')}
+                    src="/Image/SimonGarfunkel.png"
                     alt="Simon & Garfunkel"
                     className="w-full h-full object-cover"
                   />
