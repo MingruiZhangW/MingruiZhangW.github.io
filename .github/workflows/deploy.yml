@@ -7,33 +7,44 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: windows-latest
-    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: ming-website/package-lock.json
+      - name: Checkout
+        uses: actions/checkout@v4
         
-    - name: Install dependencies
-      run: |
-        cd ming-website
-        npm ci
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: ming-website/package-lock.json
+          
+      - name: Install dependencies
+        run: |
+          cd ming-website
+          npm ci
+          
+      - name: Build
+        run: |
+          cd ming-website
+          npm run build
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
         
-    - name: Build
-      run: |
-        cd ming-website
-        npm run build
-        
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./ming-website/dist 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './ming-website/dist'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 
