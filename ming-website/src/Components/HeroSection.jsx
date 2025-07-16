@@ -113,7 +113,7 @@ export default function HeroSection() {
             <Linkedin className="w-6 h-6 text-slate-700" />
           </a>
           <a
-            href={'../../Resources/Pdf/Resume Mingrui Zhang.pdf'}
+            href={'/Pdf/Resume Mingrui Zhang.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
